@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Algorithm Visualizer</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header>
+    <div class="header-left">
+      <h1>ALGO.VIZ</h1>
+      <p>Sorting algorithm visualizer</p>
+    </div>
+    <div class="algo-badge">
+      <span id="algo-name">Bubble Sort</span>
+      <span id="algo-complexity">O(n²)</span>
+    </div>
+  </header>
+
+  <main>
+    <aside class="sidebar">
+
+      <div class="control-group">
+        <label>Algorithm</label>
+        <select id="algo-select">
+          <option value="bubble">Bubble Sort</option>
+          <option value="selection">Selection Sort</option>
+          <option value="insertion">Insertion Sort</option>
+          <option value="merge">Merge Sort</option>
+          <option value="quick">Quick Sort</option>
+        </select>
+      </div>
+
+      <div class="control-group">
+        <label>Array Size</label>
+        <div class="slider-row">
+          <span>Size</span>
+          <span id="size-label">40</span>
+        </div>
+        <input type="range" id="size-slider" min="10" max="120" value="40" step="1" />
+      </div>
+
+      <div class="control-group">
+        <label>Speed</label>
+        <div class="slider-row">
+          <span>Rate</span>
+          <span id="speed-label">Medium</span>
+        </div>
+        <input type="range" id="speed-slider" min="1" max="100" value="50" step="1" />
+      </div>
+
+      <div class="btn-group">
+        <button id="btn-generate">New Array</button>
+        <button id="btn-start">Start</button>
+        <button id="btn-pause" disabled>Pause</button>
+        <button id="btn-reset" disabled>Reset</button>
+      </div>
+
+      <div class="legend">
+        <div class="legend-item">
+          <div class="legend-dot" style="background:#2e2e4a;border:1px solid #4a4a6a;"></div>
+          Default
+        </div>
+        <div class="legend-item">
+          <div class="legend-dot" style="background:#f5c842;"></div>
+          Comparing
+        </div>
+        <div class="legend-item">
+          <div class="legend-dot" style="background:#ff5757;"></div>
+          Swapping
+        </div>
+        <div class="legend-item">
+          <div class="legend-dot" style="background:#4dffb4;"></div>
+          Sorted
+        </div>
+      </div>
+
+    </aside>
+
+    <div class="viz-area">
+      <div class="grid-lines">
+        <div class="grid-line"></div>
+        <div class="grid-line"></div>
+        <div class="grid-line"></div>
+        <div class="grid-line"></div>
+        <div class="grid-line"></div>
+      </div>
+      <div id="bars-container"></div>
+    </div>
+  </main>
+
+  <!-- algorithms -->
+  <script src="js/algorithms/bubble.js"></script>
+  <script src="js/algorithms/selection.js"></script>
+  <script src="js/algorithms/insertion.js"></script>
+  <script src="js/algorithms/merge.js"></script>
+  <script src="js/algorithms/quick.js"></script>
+
+  <!-- core -->
+  <script src="js/visualizer.js"></script>
+  <script src="js/app.js"></script>
+
+</body>
+</html>
